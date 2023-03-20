@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>.form-container {
+        width: 300px;
+        background: linear-gradient(180deg,rgba(224, 0, 131, 0.548) 25%,rgb(255, 255, 255) 20%);
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        marhin:0 auto;
+      }
+      
+      .form {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+      }
+      
+      .form-container p {
+        position: absolute;
+        top: 1%;
+        left: 0%;
+        font-size: 30px;
+        font-weight: 900;
+        color: rgb(255, 255, 255);
+      }
+      
+      .form-container label {
+        color: rgba(0, 0, 0, 0.945);
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+      
+      .form-container .input {
+        padding: 10px;
+        height: 35px;
+        border: none;
+        background-color: rgba(5, 34, 56, 0.979);
+      }
+      
+      .form-container .input:focus {
+        outline: none;
+      }
+      
+      .form-container button {
+        border: none;
+        height: 35px;
+        margin-top: 30px;
+        background-color: rgb(93, 192, 118);
+        color: white;
+        font-size: 16px;
+      }
+      </style>
+</head>
+<body>
+    <div class="form-container">
+        <p>Login</p>
+    <form class="form" action="" method="post">
+        {%  csrf_token %}
+        <label>USER NAME </label>
+        <input  style="color:white; "type="text" class="input" placeholder="Enter your Username"name="un">
+        <label>Password</label>
+        <input type="password" class="input" placeholder="Password"name="p"> 
+        <button>Submit</button>
+        <a href="{% url 'reg' %}">Register</a>
+    </form>
+    </div>
+</body>
+</html>
+
